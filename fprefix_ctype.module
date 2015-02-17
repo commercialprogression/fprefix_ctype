@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the ctype feature.
+ */
+
+include_once 'fprefix_ctype.features.inc';
