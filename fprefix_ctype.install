@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Install functions for the ctype module.
+ */
+
+function fprefix_ctype_install() {
+  if (module_exists('compro_homebox')) {
+    $page = homebox_get_page('compro_homebox');
+    $page->settings['blocks']['views_ctype-block_1'] = array(
+      'module' => 'views',
+      'delta' => 'ctype-block_1',
+      'region' => 1,
+      'movable' => TRUE,
+      'status' => TRUE,
+      'open' => TRUE,
+      'closable' => TRUE,
+      'weight' => 99,
+    );
+
+    // Save the page
+    homebox_save_page($page);
+    menu_rebuild();
+  }
+}
+
